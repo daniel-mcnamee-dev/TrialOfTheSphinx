@@ -1,0 +1,113 @@
+﻿<Window x:Class="TrialOfTheSphinx.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trial of the Sphinx"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="{StaticResource ParchmentBrush}"
+        Width="900"
+        Height="600">
+
+    <!-- ROOT GRID -->
+    <Grid>
+
+        <!-- BACKGROUND IMAGE -->
+        <Image Source="../Images/Sphinx.png"
+               Stretch="UniformToFill"
+               Opacity="0.6"
+               Panel.ZIndex="0"
+               Margin="0,0,0,1"/>
+
+        <!-- VIGNETTE OVERLAY FOR CINEMATIC LOOK -->
+        <Rectangle Panel.ZIndex="0">
+            <Rectangle.Fill>
+                <RadialGradientBrush RadiusX="1.0" RadiusY="1.0" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                    <GradientStop Color="#00000000" Offset="0.25"/>
+                    <GradientStop Color="#CC000000" Offset="1.0"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!-- MAIN LAYOUT GRID (TITLE / INPUT / BUTTONS) -->
+        <Grid Panel.ZIndex="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <!-- Title row -->
+                <RowDefinition Height="0.35*" />
+                <!-- Player name row -->
+                <RowDefinition Height="0.85*" />
+                <!-- Buttons row -->
+            </Grid.RowDefinitions>
+
+            <!-- TITLE SECTION -->
+            <StackPanel Grid.Row="0"
+                        VerticalAlignment="Center">
+
+                <TextBlock Text="TRIAL OF THE SPHINX"
+                           Style="{StaticResource TitleText}"
+                           Foreground="{StaticResource HighlightBrush}"
+                           FontWeight="Bold"
+                           TextAlignment="Center"
+                           Margin="0 20 0 0">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="black"
+                                          BlurRadius="18"
+                                          ShadowDepth="0"
+                                          Opacity="0.7"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+            </StackPanel>
+
+            <!-- PLAYER NAME INPUT SECTION -->
+            <StackPanel Grid.Row="1"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center">
+
+                <TextBlock Text="Enter Your Name:"
+                           Style="{StaticResource SubtitleText}"
+                           Foreground="{StaticResource HighlightBrush}"
+                           FontWeight="Bold"
+                           TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="black"
+                                          BlurRadius="10"
+                                          ShadowDepth="0"
+                                          Opacity="0.7"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <TextBox Style="{StaticResource GreekTextBox}"
+                         Name="PlayerNameTextBox"
+                         FontSize="16"
+                         Margin="0 10 0 20"
+                         Width="260"
+                         Height="35"
+                         Background="#FFFFFFE0"
+                         Opacity="0.9" />
+            </StackPanel>
+
+            <!-- BUTTONS SECTION -->
+            <StackPanel Grid.Row="2"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center">
+
+                <Button Style="{StaticResource GreekButton}"
+                        Content="Start Game"
+                        Margin="0 10 0 10"
+                        Width="200"
+                        Height="45"
+                        Click="StartGame_Click"/>
+
+                <Button Style="{StaticResource GreekButton}"
+                        Content="Exit"
+                        Margin="0 10 0 10"
+                        Width="200"
+                        Height="45"
+                        Click="Exit_Click"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+
+</Window>

@@ -1,0 +1,70 @@
+﻿<Window x:Class="TrialOfTheSphinx.UI.Popup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Opacity="0">
+
+    <!-- FADE-IN ANIMATION -->
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                     From="0" To="1"
+                                     Duration="0:0:0.4"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <!-- ROOT GRID -->
+    <Grid Margin="20">
+
+        <!-- POPUP CARD WITH SHADOW -->
+        <Border Background="{StaticResource ParchmentBrush}"
+                CornerRadius="12"
+                Padding="20"
+                BorderBrush="{StaticResource GoldBrush}"
+                BorderThickness="2">
+            <Border.Effect>
+                <DropShadowEffect Color="Black"
+                                  BlurRadius="20"
+                                  ShadowDepth="0"
+                                  Opacity="0.6"/>
+            </Border.Effect>
+
+            <!-- CONTENT STACK: TITLE, MESSAGE, BUTTON -->
+            <StackPanel Width="350">
+
+                <!-- Popup title (used from code-behind) -->
+                <TextBlock Name="PopupTitle"
+                           Style="{StaticResource TitleText}"
+                           FontSize="24"
+                           Margin="0 0 0 10"
+                           TextAlignment="Center"/>
+
+                <!-- Popup message (used from code-behind) -->
+                <TextBlock Name="PopupMessage"
+                           Style="{StaticResource SubtitleText}"
+                           TextWrapping="Wrap"
+                           Margin="0 0 0 20"
+                           TextAlignment="Center"/>
+
+                <!-- OK button to close popup -->
+                <Button Content="OK"
+                        Style="{StaticResource GreekButton}"
+                        Width="120"
+                        Height="40"
+                        HorizontalAlignment="Center"
+                        Click="Ok_Click"/>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>
