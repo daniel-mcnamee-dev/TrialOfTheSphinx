@@ -1,7 +1,12 @@
 # Trial of the Sphinx
 
-Trial of the Sphinx is a puzzle based desktop game built with **C# and WPF**.  
-Players must solve a series of riddles, logic challenges, and memory puzzles before the timer expires in order to escape the temple.
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-WPF-blueviolet?style=for-the-badge&logo=dotnet)
+![Platform](https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge)
+![Game Type](https://img.shields.io/badge/Game-Puzzle%20Adventure-orange?style=for-the-badge)
+
+Trial of the Sphinx is a puzzle based desktop game built with **C# and WPF**.
+Players must solve riddles, logic challenges, and memory puzzles before the timer expires in order to escape the temple.
 
 The game is inspired by escape room mechanics and classic puzzle adventures.
 
